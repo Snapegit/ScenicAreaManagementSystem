@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.cl.dao.LvyougonglveDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.cl.entity.LvyougonglveEntity" id="lvyougonglveMap">
+        <result property="gonglvebiaoti" column="gonglvebiaoti"/>
+        <result property="jingdianmingcheng" column="jingdianmingcheng"/>
+        <result property="jingdiantupian" column="jingdiantupian"/>
+        <result property="youwantianshu" column="youwantianshu"/>
+        <result property="xingchengluxian" column="xingchengluxian"/>
+        <result property="qidian" column="qidian"/>
+        <result property="zhongdian" column="zhongdian"/>
+        <result property="chuxingfangshi" column="chuxingfangshi"/>
+        <result property="gonglvexiangqing" column="gonglvexiangqing"/>
+        <result property="jiudiantuijian" column="jiudiantuijian"/>
+        <result property="meishituijian" column="meishituijian"/>
+        <result property="shipin" column="shipin"/>
+    </resultMap>
+
+    <select id="selectListView"
+		resultType="com.cl.entity.view.LvyougonglveView" >
+
+		SELECT  lvyougonglve.* FROM lvyougonglve  lvyougonglve 	        
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectView"
+		resultType="com.cl.entity.view.LvyougonglveView" >
+		SELECT * FROM lvyougonglve  lvyougonglve <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+
+</mapper>
